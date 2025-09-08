@@ -1,0 +1,154 @@
+/* WDD 131 – W01 • Base Styles • Pastel Pink theme */
+/* Fonts: Poppins (display) + DM Sans (text) */
+
+:root{
+  --pink-50:#fff7fb;
+  --pink-100:#ffe6f2;
+  --pink-200:#ffd1e6;
+  --pink-300:#ffb8d8;
+  --pink-400:#ff9fcc;
+  --pink-500:#ff87bf;
+  --pink-600:#ff6db1;
+  --pink-700:#f1559f;
+  --pink-900:#7a2f54;
+
+  --ink:#2a2a2a;
+  --ink-soft:#555;
+  --card-bg:#ffffff;
+  --ring:#7a2f54;
+  --link:#7a2f54;
+  --link-hover:#b1447a;
+
+  --radius: 1.25rem;
+  --shadow: 0 10px 30px rgba(122,47,84,.12);
+  --maxw: 1100px;
+}
+
+*{ box-sizing:border-box; }
+
+html,body{
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 800px at 20% 0%, var(--pink-100), transparent 60%),
+    radial-gradient(1000px 700px at 100% 20%, var(--pink-200), transparent 60%),
+    var(--pink-50);
+  line-height:1.6;
+}
+
+.site-header{
+  background: linear-gradient(180deg, var(--pink-300), var(--pink-200));
+  padding: 1.25rem 1rem 1rem;
+  border-bottom: 2px solid var(--pink-400);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#course-title{
+  display:block; /* required by assignment */
+  text-align:center;
+  font-family: "Poppins", sans-serif;
+  font-weight:800;
+  letter-spacing:.5px;
+  color:#5a2240;
+  font-size: clamp(1.1rem, 2vw + .5rem, 1.5rem);
+  margin-bottom:.75rem;
+}
+
+.site-nav{
+  display:flex;            /* required: Flex on nav */
+  gap:.5rem;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.site-nav a{
+  text-decoration:none;
+  font-weight:600;
+  padding:.6rem .9rem;
+  border-radius: 999px;
+  background: var(--card-bg);
+  color: var(--link);
+  box-shadow: var(--shadow);
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible{
+  transform: translateY(-1px);
+  outline: none;
+  box-shadow: 0 8px 24px rgba(122,47,84,.22);
+  background: var(--pink-100);
+}
+
+main{
+  max-width: var(--maxw);      /* center limited width */
+  margin: 2rem auto;
+  padding: 0 1rem 2.5rem;
+  display:grid;
+  gap: 1.25rem;
+}
+
+h1{
+  font-family: "Poppins", sans-serif;
+  text-align:center;
+  font-size: clamp(1.6rem, 1.2rem + 2vw, 2.2rem);
+  margin: .5rem 0 1rem;
+  color:#5a2240;
+}
+
+.card{
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--pink-200);
+  display:grid;
+  gap:.75rem;
+}
+
+.card h2{
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.1rem, 1rem + 1vw, 1.6rem);
+  margin: .25rem 0 .25rem;
+  color:#6a294b;
+}
+
+.card img{
+  width:100%;
+  height:auto;
+  border-radius: calc(var(--radius) - .25rem);
+  border: 1px solid var(--pink-200);
+}
+
+.card a{
+  color: var(--link);
+}
+
+.card a:hover{
+  color: var(--link-hover);
+}
+
+footer{
+  margin-top: 2rem;
+  padding: 1.25rem 1rem 3rem;
+  text-align:center;
+  color: var(--ink-soft);
+  border-top: 2px dashed var(--pink-300);
+  background: linear-gradient(180deg, transparent, var(--pink-100));
+}
+
+@media (min-width: 800px){
+  main{
+    grid-template-columns: 1fr 1fr;  /* required: Grid for cards */
+  }
+  h1{
+    grid-column: 1 / -1; /* span both columns */
+  }
+}

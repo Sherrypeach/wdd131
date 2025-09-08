@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="p" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffb8d8"/>
+      <stop offset="1" stop-color="#ffd1e6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#p)"/>
+  <g font-family="Poppins, Arial, sans-serif" fill="#5a2240" font-weight="600">
+    <text x="80" y="140" font-size="40">&lt;header&gt;</text>
+    <text x="80" y="210" font-size="40">&lt;nav&gt; … &lt;/nav&gt;</text>
+    <text x="80" y="280" font-size="40">&lt;main class="grid"&gt;</text>
+    <text x="100" y="350" font-size="32">&lt;section class="card"&gt; … &lt;/section&gt;</text>
+    <text x="80" y="420" font-size="40">&lt;/main&gt;</text>
+    <text x="80" y="490" font-size="40">&lt;footer&gt; © <tspan font-size="34">2025</tspan> &lt;/footer&gt;</text>
+  </g>
+</svg>

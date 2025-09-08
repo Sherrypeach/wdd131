@@ -1,225 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Required meta -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WDD 131 – Dynamic Web Fundamentals – Cas Perche</title>
+  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals | Cas Perche | Home page for W01 assignment with HTML, CSS Grid/Flex, and JavaScript dates." />
+  <meta name="author" content="Cas Perche" />
 
-  <!-- Basic SEO -->
-  <title>Starter Template</title>
-  <meta name="description" content="A minimal, modern, accessible HTML starter template." />
-  <link rel="canonical" href="https://example.com/" />
-
-  <!-- Favicons (replace with your own) -->
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <meta name="theme-color" content="#0ea5e9" />
-
-  <!-- Social preview -->
-  <meta property="og:title" content="Starter Template" />
-  <meta property="og:description" content="A minimal, modern, accessible HTML starter template." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://example.com/" />
-  <meta property="og:image" content="https://example.com/og.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Fonts (optional) -->
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Minimal, modern CSS -->
-  <style>
-    :root{
-      --bg: #0b0d10;
-      --bg-soft:#111418;
-      --txt: #e7edf3;
-      --muted:#9fb3c8;
-      --brand:#0ea5e9;
-      --card:#0f1318;
-      --ring: 0 0 0 .2rem color-mix(in oklab, var(--brand) 35%, transparent);
-      color-scheme: dark light;
-    }
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg:#f7fafc; --bg-soft:#ffffff; --txt:#0f172a; --muted:#475569; --card:#ffffff;
-      }
-    }
+  <link rel="stylesheet" href="styles/base.css" />
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-      background:var(--bg); color:var(--txt); line-height:1.6;
-    }
-
-    a{color:var(--brand); text-decoration: none}
-    a:focus-visible, button:focus-visible { outline: none; box-shadow: var(--ring); border-radius:.5rem }
-
-    .container{max-width:1100px; margin-inline:auto; padding: clamp(1rem, 2.5vw, 2rem)}
-    .btn{
-      display:inline-flex; align-items:center; gap:.5rem; padding:.7rem 1rem; border-radius:.8rem;
-      background:var(--brand); color:white; font-weight:600; border:0; cursor:pointer;
-      transition: transform .08s ease;
-    }
-    .btn:active{ transform: translateY(1px) }
-
-    /* Header / Nav */
-    .skip-link{
-      position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
-    }
-    .skip-link:focus{ left:1rem; top:1rem; width:auto; height:auto; padding:.5rem .75rem; background:var(--brand); color:#fff; z-index:1000; border-radius:.5rem }
-
-    header{
-      position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px);
-      background: color-mix(in oklab, var(--bg) 70%, transparent);
-      border-bottom: 1px solid color-mix(in oklab, var(--txt) 12%, transparent);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between; gap:1rem;
-    }
-    .brand{display:flex; align-items:center; gap:.6rem; font-weight:800; letter-spacing:.2px}
-    .brand .dot{width:.8rem; height:.8rem; background:var(--brand); border-radius:50%}
-    .menu{display:flex; gap:1rem; align-items:center}
-    .menu a{color:var(--txt); opacity:.9}
-    .hamburger{display:none; background:none; border:0; font-size:1.4rem; color:var(--txt)}
-
-    @media (max-width: 720px){
-      .menu{ display:none }
-      .hamburger{ display:block }
-      .menu.open{
-        display:flex; flex-direction:column; position:absolute; inset:auto 1rem auto auto; top:64px;
-        padding: .75rem; background:var(--bg-soft); border:1px solid color-mix(in oklab, var(--txt) 12%, transparent);
-        border-radius: .8rem;
-      }
-    }
-
-    /* Hero */
-    .hero{
-      padding-block: clamp(2rem, 8vw, 6rem);
-      display:grid; gap:2rem; align-items:center;
-      grid-template-columns: 1.1fr .9fr;
-    }
-    .hero h1{ font-size:clamp(2rem, 5vw, 3.2rem); line-height:1.1; margin:0 0 .7rem }
-    .kicker{ text-transform:uppercase; letter-spacing:.18em; font-weight:700; color:var(--muted); font-size:.8rem }
-    .lead{ color:var(--muted); max-width:55ch; margin:0 0 1.25rem }
-    .card{
-      background:var(--card); border:1px solid color-mix(in oklab, var(--txt) 12%, transparent);
-      border-radius:1.1rem; padding:1rem;
-      box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 12px 30px rgba(0,0,0,.14);
-    }
-    .hero-visual{ aspect-ratio: 4/3; border-radius:1rem; background:
-      radial-gradient(120% 120% at 0% 0%, color-mix(in oklab, var(--brand) 28%, transparent), transparent 50%),
-      linear-gradient(180deg, color-mix(in oklab, var(--brand) 16%, transparent), transparent 60%),
-      conic-gradient(from 180deg at 60% 40%, #fff2 0 25%, #0000 0 100%);
-      border:1px solid color-mix(in oklab, var(--txt) 10%, transparent);
-    }
-    @media (max-width: 900px){ .hero{ grid-template-columns: 1fr } }
-
-    /* Features */
-    .features{
-      display:grid; gap:1rem; grid-template-columns: repeat(3, 1fr);
-    }
-    @media (max-width: 900px){ .features{ grid-template-columns: 1fr } }
-    .feature{ padding:1rem; border-radius:1rem; border:1px solid color-mix(in oklab, var(--txt) 10%, transparent); background:var(--bg-soft) }
-    .feature h3{ margin:.2rem 0 .4rem }
-
-    /* Footer */
-    footer{
-      margin-top:3rem; padding:2rem 0; color:var(--muted); border-top:1px solid color-mix(in oklab, var(--txt) 12%, transparent);
-      font-size:.95rem;
-    }
-
-    /* Motion preferences */
-    @media (prefers-reduced-motion: reduce){
-      *{ animation:none !important; transition:none !important; scroll-behavior:auto !important }
-    }
-  </style>
+  <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
 
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#">
-        <span class="dot" aria-hidden="true"></span>
-        <span>Brand</span>
-      </a>
-
-      <nav aria-label="Primary">
-        <button class="hamburger" aria-expanded="false" aria-controls="menu" id="menuBtn" title="Open menu">☰</button>
-        <div id="menu" class="menu" role="menu">
-          <a href="#features" role="menuitem">Features</a>
-          <a href="#about" role="menuitem">About</a>
-          <a href="#contact" role="menuitem">Contact</a>
-          <a class="btn" href="#cta" role="menuitem">Get Started</a>
-        </div>
-      </nav>
-    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://byupw.instructure.com/" target="_blank" rel="noopener">Canvas</a>
+      <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7" target="_blank" rel="noopener">Favorite Scripture</a>
+      <a href="final-project/" aria-label="Final Project placeholder">Final Project</a>
+    </nav>
   </header>
 
-  <main id="main" class="container">
-    <section class="hero">
-      <div>
-        <p class="kicker">Your product</p>
-        <h1>Build fast, launch faster.</h1>
-        <p class="lead">A sleek, accessible starter that gives you sensible defaults, dark-mode, and a responsive layout without frameworks.</p>
-        <div style="display:flex; gap:.6rem; flex-wrap:wrap">
-          <a class="btn" href="#cta">Get Started</a>
-          <a href="#features" class="btn" style="background:transparent; border:1px solid color-mix(in oklab, var(--txt) 16%, transparent); color:var(--txt)">Learn More</a>
-        </div>
-      </div>
-      <div class="card hero-visual" aria-hidden="true"></div>
+  <main>
+    <h1>Cas Perche</h1>
+
+    <section class="card">
+      <h2>About Me</h2>
+      <img src="images/cas-profile.jpeg" width="640" height="360" alt="Pastel illustration placeholder of Cas, an English teacher learning programming." loading="lazy">
+      <p>
+        Hi! I’m Cas Perche — an English teacher learning programming. This is my
+        W01 assignment home page for WDD 131. I’m focusing on clean, accessible layouts,
+        pastel aesthetics, and fundamentals like HTML, CSS (Flex/Grid), and a little JavaScript.
+      </p>
+      <ul>
+        <li>Location: Argentina</li>
+        <li>Interests: web accessibility, creative design, and front‑end fundamentals</li>
+      </ul>
     </section>
 
-    <section id="features" aria-labelledby="features-title" style="margin-top:1rem">
-      <h2 id="features-title" style="margin:0 0 .6rem">Features</h2>
-      <div class="features">
-        <article class="feature">
-          <h3>Accessible</h3>
-          <p>Skip links, focus rings, and motion-safe defaults are built-in.</p>
-        </article>
-        <article class="feature">
-          <h3>Responsive</h3>
-          <p>Mobile-friendly nav, fluid spacing, and adaptive typography.</p>
-        </article>
-        <article class="feature">
-          <h3>Customizable</h3>
-          <p>Change a few CSS variables to match your brand instantly.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="about" style="margin-top:2rem">
-      <h2>About</h2>
-      <p>Replace this with your story, mission, or product explanation.</p>
-    </section>
-
-    <section id="cta" style="margin-top:2rem">
-      <h2>Ready to try?</h2>
-      <p>Drop this file into your project, customize the colors, deploy.</p>
-      <a class="btn" href="#">Create Account</a>
+    <section class="card">
+      <h2>Web Dev Resources</h2>
+      <img src="images/code.svg" width="640" height="360" alt="Pastel code-themed illustration placeholder." loading="lazy">
+      <p>Some helpful places while I learn:</p>
+      <ul>
+        <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web Docs</a></li>
+        <li><a href="https://web.dev/learn/" target="_blank" rel="noopener">web.dev Learn</a></li>
+        <li><a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a></li>
+      </ul>
     </section>
   </main>
 
-  <footer class="container">
-    <p>© <span id="year"></span> Your Company • <a href="#">Privacy</a> • <a href="#">Terms</a></p>
+  <footer>
+    <p>© <span id="currentyear"></span> • Cas Perche • Argentina</p>
+    <p id="lastModified"></p>
   </footer>
-
-  <script>
-    // Mobile menu toggle
-    const btn = document.getElementById('menuBtn');
-    const menu = document.getElementById('menu');
-    btn?.addEventListener('click', () => {
-      const open = menu.classList.toggle('open');
-      btn.setAttribute('aria-expanded', String(open));
-      btn.title = open ? 'Close menu' : 'Open menu';
-    });
-
-    // Year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
