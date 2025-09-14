@@ -1,0 +1,16 @@
+/* temples-large.css — larger screens (>= 48rem / 768px) */
+@media (min-width: 48rem){
+  .brand{ justify-content:space-between }
+  .menu-button{ display:none } /* hide hamburger */
+  .primary-nav{ display:block }
+  .primary-nav ul{
+    flex-direction:row; gap:.25rem; margin:0;
+  }
+
+  .grid{
+    grid-template-columns: repeat(3, 1fr);
+    gap:1.25rem;
+  }
+
+  main{ padding:0 2rem }
+}
