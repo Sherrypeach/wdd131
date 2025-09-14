@@ -1,96 +1,79 @@
-/* temples.css (mobile-first) — Cas Perche, Argentina */
+/* temples.css — PINK theme matching the BYUI example layout */
 :root{
-  --pink-900:#6a1043;
-  --pink-700:#a31667;
-  --pink-500:#ff6fb5;
-  --pink-300:#ffd1e6;
-  --pink-50:#fff7fb;
-  --text:#1f1f1f;
-  --muted:#5b5b5b;
-  --radius:1.25rem;
+  --pink-900:#7b0f4f;  /* header bar */
+  --pink-800:#8e115b;
+  --pink-700:#a31667;  /* hover shades */
+  --text:#222;
+  --muted:#555;
+  --border:#e6e6e6;
+  --bg:#fff;           /* page background like example */
+  --radius:12px;
 }
 
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0;
-  font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji','Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   color:var(--text);
-  background:var(--pink-50);
-  line-height:1.6;
+  background:var(--bg);
+  line-height:1.5;
 }
 
-img{max-width:100%;display:block;height:auto}
-
-/* Header */
+/* Header — title left, hamburger + nav stacked on mobile */
 .site-header{
-  position:sticky; top:0; z-index:10;
-  background: linear-gradient(90deg,var(--pink-900), var(--pink-700));
-  color:white;
-  padding:.5rem 1rem;
-  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+  position:relative;
+  background:var(--pink-900);
+  color:#fff;
+  padding:1rem 1.25rem;
 }
 .brand{
-  display:flex; align-items:center; gap:.75rem;
-}
-.brand h1{
-  font-family: 'Playfair Display', serif;
-  font-weight:700; letter-spacing:.5px; font-size:1.35rem; margin:.25rem 0;
+  margin:0;
+  font-size:2rem;
+  font-weight:700;
 }
 
-/* Hamburger button */
+/* Hamburger (mobile only) */
 .menu-button{
+  position:absolute; right:1rem; top:1rem;
   border:none; background:transparent; cursor:pointer;
-  width:40px; height:32px; display:grid; place-items:center;
+  width:40px; height:32px; padding:0;
+  display:grid; place-items:center;
 }
-.menu-button .bar{
-  display:block; width:22px; height:2px; background:white; border-radius:2px; position:relative;
-}
-.menu-button .bar + .bar{margin-top:4px}
+.menu-button span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.menu-button span+span{margin-top:4px}
 
 /* Nav */
-.primary-nav{ display:none; }
+.primary-nav{ display:none; margin-top:.5rem; }
 .primary-nav.open{ display:block; }
-.primary-nav ul{ list-style:none; padding:0; margin:.5rem 0 0; display:flex; gap:.25rem; flex-direction:column; }
+.primary-nav ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.25rem }
 .primary-nav a{
-  color:white; text-decoration:none; font-weight:600; display:block;
-  padding:.5rem .75rem; border-radius:.75rem;
+  color:#fff; text-decoration:none; padding:.35rem .6rem; border-radius:.5rem; display:inline-block;
 }
-.primary-nav a:hover{ background:rgba(255,255,255,.18) }
-.primary-nav a.active{ background:rgba(255,255,255,.25) }
+.primary-nav a:hover{ background:var(--pink-800) }
+.primary-nav a.active{ background:var(--pink-700) }
 
-/* Main */
-main{ max-width:64rem; margin:1rem auto; padding:0 1rem; }
-h2{
-  text-align:center; margin:.5rem 0 1rem;
-  font-family:'Playfair Display',serif;
-}
+/* Main & grid */
+main{ max-width:60rem; margin:0 auto; padding:1rem 1rem 2rem; }
+h2{ margin:0 0 1rem 0; font-size:2rem; }
 
-/* Grid of cards */
-.grid{
-  display:grid;
-  grid-template-columns: 1fr; /* one column on mobile */
-  gap:1rem;
-}
-.card{
-  background:white;
-  border-radius: var(--radius);
+.album.grid{ display:grid; grid-template-columns:1fr; gap:2rem; }
+figure.card{
+  margin:0;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
   overflow:hidden;
-  box-shadow: 0 10px 24px rgba(170, 16, 87, .10);
-  border:1px solid var(--pink-300);
+  box-shadow:0 4px 16px rgba(0,0,0,.08);
+  background:#fff;
 }
-.card img{
-  aspect-ratio: 16/10;
-  object-fit:cover;
-}
+.card img{ width:100%; height:auto; display:block; }
 .card figcaption{
   text-align:center;
-  padding:.75rem;
+  padding:.6rem .75rem;
+  font-weight:700;
   color:var(--muted);
-  font-weight:600;
+  background:#fff;
 }
 
 /* Footer */
-.site-footer{
-  text-align:center; padding:2rem 1rem 3rem; color:#5a5a5a;
-}
+.site-footer{ text-align:center; color:#666; padding:2rem 1rem }
