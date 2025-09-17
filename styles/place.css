@@ -1,0 +1,191 @@
+/* =====================================================================
+   W03 Country Page — styles/place.css
+   Author: cas perche (Argentina)
+   Strategy:
+   - Mobile-first CSS; then one media query to enhance the wider view.
+   - Uses global CSS variables so colors are easy to tweak.
+   - Provides a pseudo-element (::after) icon for the Weather title in wide view.
+   ===================================================================== */
+
+/* ---------------------------- */
+/* 1) GLOBAL CSS VARIABLES      */
+/* ---------------------------- */
+:root {
+  /* Cute pink palette */
+  --pink-900: #a51d4a;
+  --pink-700: #c73b6f;
+  --pink-500: #f06292;
+  --pink-300: #f8a1c4;
+  --pink-100: #fde4ef;
+
+  /* Accents / surfaces */
+  --surface: #ffffff;
+  --muted: rgba(0,0,0,0.08);
+  --text: #222;
+  --text-muted: #444;
+
+  /* Sizing helpers */
+  --radius: 1rem;
+  --shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* ---------------------------- */
+/* 2) BASE ELEMENT STYLES       */
+/* ---------------------------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  color: var(--text);
+  background: var(--surface);
+  line-height: 1.45;
+}
+
+img { max-width: 100%; display: block; }
+
+/* Accessibility: give focus outlines a friendly style */
+:focus-visible {
+  outline: 3px dashed var(--pink-700);
+  outline-offset: 3px;
+}
+
+/* ---------------------------- */
+/* 3) HEADER                    */
+/* ---------------------------- */
+.site-header {
+  background: linear-gradient(180deg, var(--pink-900), var(--pink-700));
+  color: #fff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border-bottom: 6px solid var(--pink-300);
+}
+.site-title {
+  margin: 0;
+  letter-spacing: 0.03em;
+  font-weight: 800;
+}
+
+/* ---------------------------- */
+/* 4) HERO LAYOUT               */
+/* ---------------------------- */
+.hero {
+  position: relative;
+  /* The hero image is full-bleed; cards will stack under it on mobile */
+}
+.hero picture img {
+  width: 100%;
+  height: auto;
+  block-size: auto;
+}
+
+/* Cards (used for Data and Weather) */
+.card {
+  background: color-mix(in oklab, var(--surface) 92%, var(--pink-100) 8%);
+  backdrop-filter: blur(2px);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 1rem auto;
+  width: min(96%, 720px);
+  box-shadow: var(--shadow);
+}
+.card h2 {
+  margin: 0 0 0.75rem 0;
+  padding: 0.4rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--pink-500);
+  color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(240,98,146,.25);
+}
+
+/* Definition list grid for Data card */
+.data dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .5rem .75rem;
+}
+.data dl > div { 
+  display: grid; 
+  grid-template-columns: 7.5rem 1fr; 
+  align-items: baseline;
+}
+.data dt {
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.data dd {
+  margin: 0;
+}
+
+/* Weather card */
+.weather .weather-svg {
+  /* Shown on mobile; hidden on wide view via media query */
+  width: 90px;
+  height: 90px;
+  margin-inline: auto;
+  margin-block: .25rem .5rem;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,.2));
+}
+.weather .weather-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.weather .weather-list li {
+  padding: .4rem 0;
+  border-bottom: 1px dashed var(--muted);
+}
+.weather .weather-list li:last-child { border-bottom: none; }
+
+/* ---------------------------- */
+/* 5) FOOTER                    */
+/* ---------------------------- */
+.site-footer {
+  text-align: center;
+  background: linear-gradient(180deg, var(--pink-700), var(--pink-900));
+  color: #fff;
+  padding: 1.25rem 1rem 2.25rem;
+  margin-top: 2rem;
+  border-top: 6px solid var(--pink-300);
+}
+.site-footer .flower { filter: drop-shadow(0 2px 2px rgba(0,0,0,.2)); }
+
+/* ---------------------------- */
+/* 6) WIDE VIEW ENHANCEMENTS    */
+/* ---------------------------- */
+@media (min-width: 780px) {
+  /* Place the two cards on top of the hero image using absolute positioning */
+  .card {
+    position: absolute;
+    width: 360px;
+  }
+  .card.data {
+    top: clamp(10%, 14vw, 22%);
+    left: clamp(2%, 4vw, 6%);
+  }
+  .card.weather {
+    bottom: clamp(8%, 10vw, 18%);
+    right: clamp(2%, 4vw, 6%);
+  }
+
+  /* Hide the SVG in wide view; we'll show an emoji with a pseudo-element instead */
+  .weather .weather-svg { display: none; }
+
+  /* REQUIRED: pseudo-element with an emoticon/emoji after the Weather heading */
+  .weather h2::after {
+    content: " ⛅"; /* Emoticon appears *after* the heading text */
+    font-size: 1.25em;
+    line-height: 1;
+  }
+
+  /* Make the Data dl two columns on wide screens */
+  .data dl {
+    grid-template-columns: 1fr;
+  }
+}

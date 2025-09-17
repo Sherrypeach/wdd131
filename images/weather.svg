@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Simple, license-free SVG weather icon (partly cloudy) created for this assignment -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" aria-hidden="true">
+  <defs>
+    <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFD166"/>
+      <stop offset="1" stop-color="#F9A826"/>
+    </linearGradient>
+  </defs>
+  <!-- Sun -->
+  <circle cx="42" cy="42" r="20" fill="url(#sun)" />
+  <!-- Sun rays -->
+  <g stroke="#F9A826" stroke-width="4" stroke-linecap="round">
+    <line x1="42" y1="12" x2="42" y2="0"/>
+    <line x1="42" y1="84" x2="42" y2="72"/>
+    <line x1="12" y1="42" x2="0" y2="42"/>
+    <line x1="84" y1="42" x2="72" y2="42"/>
+    <line x1="20" y1="20" x2="12" y2="12"/>
+    <line x1="72" y1="12" x2="64" y2="20"/>
+    <line x1="64" y1="64" x2="72" y2="72"/>
+    <line x1="12" y1="72" x2="20" y2="64"/>
+  </g>
+  <!-- Cloud -->
+  <g transform="translate(40,54)">
+    <ellipse cx="44" cy="24" rx="28" ry="18" fill="#ffffff" stroke="#d0d0d0" stroke-width="3"/>
+    <ellipse cx="20" cy="28" rx="16" ry="12" fill="#ffffff" stroke="#d0d0d0" stroke-width="3"/>
+    <ellipse cx="32" cy="18" rx="18" ry="12" fill="#ffffff" stroke="#d0d0d0" stroke-width="3"/>
+  </g>
+</svg>
