@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>W05 Website Planning Document | Cas Perche</title>
+  <meta name="description" content="W05 Project Site Plan for the Creative & Artistic Makeup website by Cas Perche." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/siteplan.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">✨</div>
+      <div class="titles">
+        <h1>Website Planning Document</h1>
+        <p class="subtitle">W05 Project — <strong>Cas Perche</strong></p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="site-name" class="card">
+      <h2>Site Name</h2>
+      <p><strong>Name:</strong> <span class="pill">Cas Perche Creative — Makeup Artistry</span></p>
+      <p><strong>Why this name?</strong> It clearly reflects my brand (<em>Cas Perche</em>) and the focus on <em>creative / editorial</em> makeup as art. It's memorable, short, and flexible for a portfolio and learning resources.</p>
+      <details class="optional">
+        <summary>Optional: Domain ideas (availability not required)</summary>
+        <ul>
+          <li><code>casperchecreative.com</code></li>
+          <li><code>casmakeupart.art</code></li>
+          <li><code>yirutlovebeauty.com</code></li>
+        </ul>
+        <p class="note">Domain purchase is not required for this class; these are just ideas.</p>
+      </details>
+    </section>
+
+    <section id="purpose" class="card">
+      <h2>Site Purpose</h2>
+      <p>This website is a small, elegant hub that showcases <strong>creative and editorial makeup looks</strong>, provides concise <strong>how‑to tips and tools</strong>, and offers <strong>contact links</strong> for collaborations. It will be responsive, accessible, and a foundation to practice modern HTML, CSS, and JavaScript (events, filtering, dynamic content).</p>
+      <ul class="dash">
+        <li>Showcase a gallery of looks with short descriptions.</li>
+        <li>Offer simple tutorials/resources (brushes, products, techniques).</li>
+        <li>Share an “About” story and links to social media.</li>
+      </ul>
+    </section>
+
+    <section id="scenarios" class="card">
+      <h2>Scenarios</h2>
+      <ul class="qna">
+        <li><strong>Q:</strong> Where can I see Cas’s editorial looks and product details?<br><strong>A:</strong> On the Gallery page—each card lists the look, products, and a short note.</li>
+        <li><strong>Q:</strong> I’m a brand—how do I collaborate?<br><strong>A:</strong> Visit the Contact page for email/social links and a simple inquiry form.</li>
+      </ul>
+    </section>
+
+    <section id="colors" class="card">
+      <h2>Color Schema</h2>
+      <p>Soft, cute, and editorial-friendly. Two main brand colors with neutral support:</p>
+      <div class="swatches">
+        <div class="swatch" style="--sw:#f7c6d9">
+          <div class="chip"></div>
+          <div class="meta">
+            <div class="name">Blush Pink</div>
+            <code>#f7c6d9</code>
+            <div class="usage">Accents, buttons, highlights</div>
+          </div>
+        </div>
+        <div class="swatch" style="--sw:#7b0f4f">
+          <div class="chip"></div>
+          <div class="meta">
+            <div class="name">Mulberry</div>
+            <code>#7b0f4f</code>
+            <div class="usage">Headings, header/footer background</div>
+          </div>
+        </div>
+        <div class="swatch" style="--sw:#222222">
+          <div class="chip"></div>
+          <div class="meta">
+            <div class="name">Text</div>
+            <code>#222222</code>
+            <div class="usage">Body text</div>
+          </div>
+        </div>
+        <div class="swatch" style="--sw:#ffffff">
+          <div class="chip"></div>
+          <div class="meta">
+            <div class="name">Background</div>
+            <code>#ffffff</code>
+            <div class="usage">Page background</div>
+          </div>
+        </div>
+      </div>
+      <p class="note">This document uses the chosen colors via CSS variables.</p>
+    </section>
+
+    <section id="typography" class="card">
+      <h2>Typography</h2>
+      <ul class="dash">
+        <li><strong>Headings:</strong> Poppins 600–700</li>
+        <li><strong>Body:</strong> Inter 400–700</li>
+      </ul>
+      <p class="note">Both fonts are widely available on Google Fonts and pair cleanly for editorial layouts.</p>
+    </section>
+
+    <section id="wireframe" class="card">
+      <h2>Wireframe (Home Page)</h2>
+      <div class="wf-grid">
+        <figure>
+          <figcaption>Mobile</figcaption>
+          <!-- Simple inline SVG wireframe (mobile) -->
+          <svg viewBox="0 0 360 640" role="img" aria-label="Mobile wireframe">
+            <rect x="10" y="10" width="340" height="60" fill="#f7c6d9" rx="8"></rect>
+            <rect x="10" y="90" width="340" height="24" fill="#ddd" rx="4"></rect>
+            <rect x="10" y="124" width="340" height="160" fill="#eee" rx="8"></rect>
+            <rect x="10" y="294" width="340" height="160" fill="#eee" rx="8"></rect>
+            <rect x="10" y="464" width="340" height="160" fill="#eee" rx="8"></rect>
+            <text x="20" y="50" fill="#7b0f4f" font-size="16" font-family="Inter">Header + Brand</text>
+            <text x="20" y="108" fill="#666" font-size="12" font-family="Inter">Filter Bar</text>
+            <text x="20" y="210" fill="#666" font-size="12" font-family="Inter">Gallery Card</text>
+            <text x="20" y="380" fill="#666" font-size="12" font-family="Inter">Gallery Card</text>
+            <text x="20" y="550" fill="#666" font-size="12" font-family="Inter">Gallery Card</text>
+          </svg>
+        </figure>
+        <figure>
+          <figcaption>Desktop</figcaption>
+          <!-- Simple inline SVG wireframe (desktop) -->
+          <svg viewBox="0 0 960 540" role="img" aria-label="Desktop wireframe">
+            <rect x="10" y="10" width="940" height="80" fill="#f7c6d9" rx="10"></rect>
+            <rect x="10" y="100" width="940" height="32" fill="#ddd" rx="6"></rect>
+            <rect x="10" y="142" width="300" height="180" fill="#eee" rx="10"></rect>
+            <rect x="330" y="142" width="300" height="180" fill="#eee" rx="10"></rect>
+            <rect x="650" y="142" width="300" height="180" fill="#eee" rx="10"></rect>
+            <rect x="10" y="332" width="300" height="180" fill="#eee" rx="10"></rect>
+            <rect x="330" y="332" width="300" height="180" fill="#eee" rx="10"></rect>
+            <rect x="650" y="332" width="300" height="180" fill="#eee" rx="10"></rect>
+            <text x="24" y="60" fill="#7b0f4f" font-size="18" font-family="Inter">Header + Nav</text>
+            <text x="24" y="122" fill="#666" font-size="12" font-family="Inter">Filter Bar</text>
+            <text x="20" y="210" fill="#666" font-size="12" font-family="Inter">Card</text>
+            <text x="340" y="210" fill="#666" font-size="12" font-family="Inter">Card</text>
+            <text x="660" y="210" fill="#666" font-size="12" font-family="Inter">Card</text>
+          </svg>
+        </figure>
+      </div>
+      <p class="note">Wireframes show rough layout only. Final content and spacing may vary.</p>
+    </section>
+
+    <section id="css" class="card">
+      <h2>CSS Notes</h2>
+      <ul class="dash">
+        <li>Mobile‑first CSS with a desktop breakpoint at <code>48rem</code>.</li>
+        <li>Use CSS variables for color schema to keep things consistent.</li>
+        <li>Accessible focus states and readable line length.</li>
+      </ul>
+    </section>
+
+    <section id="testing" class="card">
+      <h2>Testing & Self‑Check</h2>
+      <ul class="dash">
+        <li>Validate HTML/CSS; check Console for JS errors.</li>
+        <li>Run Lighthouse (mobile/desktop): Accessibility, Best Practices, SEO.</li>
+        <li>Check color contrast and keyboard navigation.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Cas Perche • Argentina</p>
+    <p><small>Last Modified: <span id="last-modified"></span></small></p>
+    <script>
+      const y = document.getElementById('year');
+      const lm = document.getElementById('last-modified');
+      if (y) y.textContent = new Date().getFullYear();
+      if (lm) lm.textContent = document.lastModified;
+    </script>
+  </footer>
+</body>
+</html>

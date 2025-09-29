@@ -1,0 +1,94 @@
+:root{
+  --pink:#f7c6d9;
+  --mulberry:#7b0f4f;
+  --ink:#222;
+  --muted:#666;
+  --bg:#fff;
+  --card:#ffffff;
+  --border:#f0e6ec;
+  --radius:16px;
+  --shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg, #fff 0%, #fff 60%, #fff8fb 100%);
+}
+
+h1,h2,h3{ font-family: Poppins, Inter, sans-serif; color:var(--mulberry) }
+h1{ font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin:0 }
+h2{ font-size: clamp(1.2rem, 1.8vw, 1.5rem); margin:.25rem 0 1rem }
+
+.site-header{
+  position:sticky; top:0; z-index:10;
+  background:var(--mulberry);
+  color:#fff;
+  padding:1rem 1.25rem;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+.brand{ display:flex; align-items:center; gap:.85rem; }
+.logo{
+  width:40px; height:40px; border-radius:12px;
+  background:var(--pink);
+  display:grid; place-items:center; font-size:1.2rem; color:var(--mulberry);
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,.05);
+}
+.subtitle{ margin:.25rem 0 0; color:#ffe6f2 }
+
+.container{ max-width: 72rem; margin: 0 auto; padding: 1.25rem; }
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 0 0 1rem 0;
+  box-shadow: var(--shadow);
+}
+
+.pill{
+  display:inline-block;
+  background: var(--pink);
+  color: var(--mulberry);
+  padding: .25rem .6rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.optional summary{ cursor:pointer; color:var(--mulberry) }
+.optional .note{ color:var(--muted) }
+
+.dash{ padding-left:1.25rem }
+.dash li{ margin:.35rem 0 }
+
+.qna{ list-style:none; padding:0; margin:0 }
+.qna li{ margin:.5rem 0; padding:.5rem .75rem; background:#fff7fb; border:1px dashed var(--pink); border-radius:12px }
+
+.swatches{ display:grid; grid-template-columns: 1fr; gap:.75rem }
+.swatch{ display:flex; align-items:center; gap:.75rem; padding:.5rem; border:1px solid var(--border); border-radius:12px; background:#fff }
+.swatch .chip{ width:48px; height:48px; border-radius:12px; background: var(--sw) }
+.swatch .meta .name{ font-weight:700 }
+.swatch .usage{ color:var(--muted); font-size:.9rem }
+
+@media (min-width:48rem){
+  .swatches{ grid-template-columns: repeat(2, 1fr); }
+  .wf-grid{ grid-template-columns: 1fr 1fr; }
+}
+
+.wf-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:1rem;
+}
+figure{ margin:0 }
+figcaption{ font-weight:700; margin-bottom:.25rem }
+
+.site-footer{
+  text-align:center;
+  color:var(--muted);
+  padding:2rem 1rem 3rem;
+}
