@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Review Submitted • W05 — Cas Perche</title>
+  <meta name="description" content="Review confirmation and counter (localStorage) for W05 by Cas Perche" />
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <h1>Thank you! 💜</h1>
+  </header>
+
+  <main id="main">
+    <section class="card">
+      <p class="mt-0"><strong>Your review has been submitted successfully.</strong></p>
+      <p>Here’s a quick summary of what you sent:</p>
+
+      <div id="submissionSummary"></div>
+
+      <p class="mt-6"><strong>Total reviews you’ve submitted from this browser:</strong> <span id="reviewCounter">0</span></p>
+
+      <div class="actions">
+        <a class="button" href="form.html">Submit Another Review</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div>©<span id="year"></span> 🌸 <strong>Cas Perche</strong> • Argentina</div>
+        <div class="small">Last Modification: <span id="lastModified"></span></div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="scripts/review.js" defer></script>
+  <script src="scripts/dates.js" defer></script>
+</body>
+</html>

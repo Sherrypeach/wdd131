@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Review • W05 — Cas Perche</title>
+  <meta name="description" content="W05 Assignment — Product Review Form by Cas Perche" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <h1>Product Review</h1>
+  </header>
+
+  <main id="main">
+    <section class="card">
+      <form method="get" action="review.html">
+        <fieldset class="grid grid-2">
+          <div>
+            <label for="productName">Product Name</label>
+            <select id="productName" name="productName" required aria-describedby="productHelp">
+              <option value="" selected disabled hidden>Choose a Product …</option>
+              <!-- Options are populated by JS from an array -->
+            </select>
+            <p id="productHelp" class="help">Pick the product you are reviewing.</p>
+          </div>
+
+          <div>
+            <legend class="mt-0">Date of Installation</legend>
+            <label for="installDate" class="help">When did you install or start using it?</label>
+            <input id="installDate" name="installDate" type="date" class="input" required>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Overall Rating</legend>
+          <div class="rating" role="radiogroup" aria-label="Overall rating from 1 to 5">
+            <input type="radio" id="rate1" name="rating" value="1" required>
+            <input type="radio" id="rate2" name="rating" value="2">
+            <input type="radio" id="rate3" name="rating" value="3">
+            <input type="radio" id="rate4" name="rating" value="4">
+            <input type="radio" id="rate5" name="rating" value="5">
+          </div>
+          <div class="help" aria-hidden="true">Tap a star — 1 (meh) to 5 (amazing)</div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Which features did you find useful in the product? <span class="help">(Check all that apply)</span></legend>
+          <div class="checkbox-list">
+            <label class="check"><input type="checkbox" id="featDurability" name="features" value="Durability"> Durability</label>
+            <label class="check"><input type="checkbox" id="featEase" name="features" value="Ease of Use"> Ease of Use</label>
+            <label class="check"><input type="checkbox" id="featPerformance" name="features" value="Performance"> Performance</label>
+            <label class="check"><input type="checkbox" id="featDesign" name="features" value="Design"> Design</label>
+            <label class="check"><input type="checkbox" id="featValue" name="features" value="Value"> Value</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="grid grid-2">
+          <div>
+            <label for="reviewText">Written Review <span class="help">(Optional)</span></label>
+            <textarea id="reviewText" name="reviewText" placeholder="Tell others what you liked (or didn't)…"></textarea>
+          </div>
+          <div>
+            <label for="userName">Your Name <span class="help">(Optional)</span></label>
+            <input id="userName" name="userName" type="text" class="input" placeholder="Cas Perche">
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <input class="button" type="submit" value="Post Review">
+          <input class="button secondary" type="reset" value="Reset">
+        </div>
+
+      </form>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div>©<span id="year"></span> 🌸 <strong>Cas Perche</strong> • Argentina</div>
+        <div class="small">Last Modification: <span id="lastModified"></span></div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="scripts/review.js" defer></script>
+  <script src="scripts/dates.js" defer></script>
+</body>
+</html>
