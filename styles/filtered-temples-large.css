@@ -2,7 +2,6 @@
   .primary-nav{ display:block; margin:0; }
   .primary-nav ul{ flex-direction:row; gap:.75rem; }
   .menu-button{ display:none; }
-
   .album.grid{ grid-template-columns:repeat(3, 1fr); gap:1.5rem; }
 }
 @media (min-width:70rem){
