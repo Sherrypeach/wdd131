@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Filtered Temple Album — WDD131 — Cas Perche" />
+  <title>Filtered Temple Album | Cas Perche</title>
+  <!-- Mobile-first CSS then larger overrides -->
+  <link rel="stylesheet" href="styles/filtered-temples.css">
+  <link rel="stylesheet" href="styles/filtered-temples-large.css" media="(min-width: 48rem)">
+  <script defer src="scripts/filtered-temples.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-row">
+      <h1 class="brand">Temple Album</h1>
+      <button id="menu-button" class="menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a data-filter="home" class="active" href="#">Home</a></li>
+        <li><a data-filter="old" href="#">Old</a></li>
+        <li><a data-filter="new" href="#">New</a></li>
+        <li><a data-filter="large" href="#">Large</a></li>
+        <li><a data-filter="small" href="#">Small</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2 id="view-title">Home</h2>
+    <section id="album" class="album grid" aria-live="polite">
+      <!-- Cards are injected here by JavaScript -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Cas Perche • Argentina</p>
+    <p><small>Last Modified: <span id="last-modified"></span></small></p>
+  </footer>
+</body>
+</html>
