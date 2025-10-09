@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Cas Perche Creative — Editorial makeup looks, tutorials, and collaboration contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/style.css">
+<link rel="icon" href="data:,">
+
+<title>Gallery — Cas Perche Creative</title>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Cas Perche Creative — Home">
+    <span class="logo">CP</span>
+    <span class="brand-text">Cas Perche Creative</span>
+  </a>
+  <nav class="site-nav" aria-label="Primary">
+    <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="menuList">Menu</button>
+    <ul id="menuList" class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><button id="themeToggle" class="linklike" type="button">Toggle Theme</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="page-intro">
+    <h1>Gallery</h1>
+    <p>Explore creative looks. Use filters or save favorites.</p>
+    <form id="filterForm" class="filter-bar" aria-label="Filter looks">
+      <label>
+        Category
+        <select name="category" id="category">
+          <option value="all">All</option>
+          <option value="editorial">Editorial</option>
+          <option value="graphic">Graphic Liner</option>
+          <option value="color">Color Pop</option>
+        </select>
+      </label>
+      <label>
+        Search
+        <input type="search" id="search" name="search" placeholder="Search products or notes">
+      </label>
+      <button type="submit" class="btn">Apply</button>
+      <button type="button" id="clearFilters" class="btn-outline">Clear</button>
+    </form>
+  </section>
+
+  <section>
+    <ul id="galleryGrid" class="gallery-grid" aria-live="polite"></ul>
+  </section>
+</main>
+<footer class="site-footer">
+  <p>© 2025 Cas Perche • Argentina</p>
+  <p><small>Last Modified: 2025-10-09 14:14:39</small></p>
+</footer>
+
+<script src="scripts/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800' role='img' aria-label='Editorial look — Dreamy Pink'>
+  <defs>
+    <linearGradient id='g' x1='0' x2='1'>
+      <stop offset='0%' stop-color='#f7c6d9'/>
+      <stop offset='100%' stop-color='#ffffff'/>
+    </linearGradient>
+  </defs>
+  <rect width='1200' height='800' fill='url(#g)'/>
+  <g font-family='Poppins, Arial, sans-serif' font-weight='700' fill='#7b0f4f'>
+    <text x='60' y='140' font-size='72'>Cas Perche Creative</text>
+    <text x='60' y='230' font-size='44'>Dreamy Pink — soft glam</text>
+  </g>
+  <circle cx='1000' cy='650' r='90' fill='#7b0f4f' opacity='0.8'/>
+</svg>

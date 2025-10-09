@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Cas Perche Creative — Editorial makeup looks, tutorials, and collaboration contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/style.css">
+<link rel="icon" href="data:,">
+
+<title>Contact — Cas Perche Creative</title>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Cas Perche Creative — Home">
+    <span class="logo">CP</span>
+    <span class="brand-text">Cas Perche Creative</span>
+  </a>
+  <nav class="site-nav" aria-label="Primary">
+    <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="menuList">Menu</button>
+    <ul id="menuList" class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><button id="themeToggle" class="linklike" type="button">Toggle Theme</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero small-hero">
+    <img src="images/contact-hero.svg" alt="Contact Cas Perche Creative" width="1200" height="800" loading="lazy" decoding="async">
+    <div class="hero-text">
+      <h1>Contact</h1>
+      <p>Brands & creators: collaborate, request a look, or ask a question.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <h2>Inquiry Form</h2>
+    <form id="contactForm" class="stack" novalidate>
+      <div class="grid-2">
+        <label for="name">Name
+          <input id="name" name="name" autocomplete="name" required>
+        </label>
+        <label for="email">Email
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </label>
+      </div>
+      <label for="topic">Topic
+        <select id="topic" name="topic" required>
+          <option value="">Select one…</option>
+          <option value="collab">Collaboration</option>
+          <option value="tutorial">Tutorial request</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <label for="message">Message
+        <textarea id="message" name="message" rows="5" minlength="10" required></textarea>
+      </label>
+      <div class="actions">
+        <button class="btn" type="submit">Send</button>
+        <button class="btn-outline" type="reset">Reset</button>
+      </div>
+      <p id="formMsg" class="form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+<footer class="site-footer">
+  <p>© 2025 Cas Perche • Argentina</p>
+  <p><small>Last Modified: 2025-10-09 14:14:39</small></p>
+</footer>
+
+<script src="scripts/main.js" defer></script>
+</body>
+</html>
